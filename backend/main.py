@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from parser import extract_text
 from analyzer import analyze
 
@@ -25,4 +26,16 @@ async def analyze_resume(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Could not extract text from the file.")
 
     result = analyze(text)
+    return result
+
+
+class TextRequest(BaseModel):
+    text: str
+
+
+@app.post("/analyze/text")
+async def analyze_text(req: TextRequest):
+    if not req.text.strip():
+        raise HTTPException(status_code=400, detail="Text cannot be empty.")
+    result = analyze(req.text)
     return result
