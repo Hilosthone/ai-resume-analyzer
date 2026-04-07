@@ -1,6 +1,6 @@
 # AI Resume Analyzer
 
-> Built by [BuildON](https://builon.com) for [JustXend](https://justxend.com)
+> Built by BuildON for JustXend
 
 Upload your resume and get an instant ATS score, extracted skills, experience summary, missing keywords, and actionable improvement suggestions — in seconds.
 
@@ -10,7 +10,7 @@ Upload your resume and get an instant ATS score, extracted skills, experience su
 
 | Service | URL |
 |---|---|
-| Backend API | _Coming soon_ |
+| Backend API | _Coming soon_  |
 | Frontend | _Coming soon_ |
 
 ---
@@ -43,14 +43,28 @@ Upload your resume and get an instant ATS score, extracted skills, experience su
 
 ai-resume-analyzer/
 ├── backend/
-│   ├── main.py              # API routes
-│   ├── parser.py            # Extracts text from PDF and DOCX
-│   ├── analyzer.py          # Calls GPT-4o to analyze resume
-│   ├── prompt_builder.py    # Builds the analysis instruction prompt
-│   └── config.py            # Environment config
-├── frontend/                # Next.js app
-├── render.yaml              # Render deployment config
-├── requirements.txt
+│   ├── main.py              # FastAPI routes
+│   ├── parser.py            # PDF/DOCX text extraction
+│   ├── analyzer.py          # OpenAI GPT-4o integration
+│   ├── prompt_builder.py    # AI system instructions
+│   └── config.py            # API Keys & Env vars
+├── frontend/                # Next.js 14+ App Router
+│   ├── src/
+│   │   ├── app/             # Routes & Layouts
+│   │   │   ├── layout.tsx   # Global Fonts/Root
+│   │   │   ├── page.tsx     # Landing page with UploadZone
+│   │   │   └── globals.css  # Tailwind directives
+│   │   ├── components/      # UI Components
+│   │   │   ├── shared/      # Reusable UI (Button, Card)
+│   │   │   └── upload/      # UploadZone.tsx & Dashboard
+│   │   ├── hooks/           # Custom hooks (e.g., useAnalysis)
+│   │   └── lib/             # Utils (e.g., api-client.ts)
+│   ├── public/              # Static assets (Logos, Icons)
+│   ├── tailwind.config.ts   # UI Theme & Colors
+│   ├── next.config.mjs
+│   └── package.json
+├── render.yaml              # Multi-service deployment config
+├── requirements.txt         # Backend dependencies
 └── README.md
 
 ```

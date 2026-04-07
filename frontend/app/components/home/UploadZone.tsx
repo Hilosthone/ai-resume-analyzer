@@ -42,7 +42,6 @@ export default function UploadZone() {
 
   const handleAnalyze = async (mode: 'file' | 'text') => {
     setIsAnalyzing(true)
-    // const baseUrl = 'https://ai-resume-analyzer-backend-o12w.onrender.com'
     const baseUrl = 'http://44.222.98.52:8001'
 
     try {
