@@ -1,6 +1,6 @@
 # AI Resume Analyzer
 
-> Built by [BuildON](https://builon.com) for [JustXend](https://justxend.com)
+> Built by BuildON for JustXend
 
 Upload your resume and get an instant ATS score, extracted skills, experience summary, missing keywords, and actionable improvement suggestions — in seconds.
 
@@ -10,7 +10,7 @@ Upload your resume and get an instant ATS score, extracted skills, experience su
 
 | Service | URL |
 |---|---|
-| Backend API | https://ai-resume-analyzer-backend-o12w.onrender.com |
+| Backend API | _Coming soon_  |
 | Frontend | _Coming soon_ |
 
 ---
